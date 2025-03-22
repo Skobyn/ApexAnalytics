@@ -8,7 +8,7 @@ export type SearchParams = { [key: string]: string | string[] | undefined };
 /**
  * Common page props interface for Next.js App Router
  */
-export interface PageProps<Params = {}, SearchParamsInput = {}> {
+export interface PageProps<Params = unknown, SearchParamsInput = unknown> {
   params: Params;
   searchParams?: SearchParamsInput;
 }
