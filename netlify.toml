@@ -2,12 +2,13 @@
   remote_images = ["https://ext.same-assets.com/.*", "https://ext.same-assets.com/1044981387/.*"]
 
 [build]
-  command = "bun run build:ignore-ts"
+  command = "npx next build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
   NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_TYPESCRIPT_COMPILE_SKIP = "true"
 
 [[redirects]]
   from = "/*"
