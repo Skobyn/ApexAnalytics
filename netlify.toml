@@ -11,7 +11,7 @@
   NEXT_TYPESCRIPT_COMPILE_SKIP = "true"
   NEXT_SKIP_TYPE_CHECK = "true"
   ESLINT_SKIP_DIRs = "."
-  GO_VERSION = "1.19.x"
+  GO_VERSION = "1.19.13"
 
 [[redirects]]
   from = "/*"

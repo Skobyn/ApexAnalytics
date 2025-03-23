@@ -6,7 +6,7 @@ import Link from "next/link";
 import { getIntegrationById, categories, IntegrationCategory } from "@/lib/integrations";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
@@ -22,11 +22,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default function IntegrationPage({ 
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function IntegrationPage({ params }) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
