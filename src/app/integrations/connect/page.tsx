@@ -15,6 +15,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { integrations, categories, IntegrationCategory } from "@/lib/integrations";
+import { PageProps } from "@/types/next";
 
 export default function ConnectIntegration() {
   const router = useRouter();

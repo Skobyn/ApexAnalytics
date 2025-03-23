@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ChevronRight, ArrowRight, Settings, BarChart2 } from "lucide-react";
 import { getIntegrationById } from "@/lib/integrations";
+import { PageProps } from "@/types/next";
 
 export default function IntegrationSuccessPage() {
   const router = useRouter();

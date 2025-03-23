@@ -17,8 +17,13 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { getIntegrationById } from "@/lib/integrations";
+import { PageProps, DynamicRouteParams } from "@/types/next";
 
-export default function IntegrationConnectPage({ params }: { params: { id: string } }) {
+type IntegrationConnectParams = {
+  id: string;
+};
+
+export default function IntegrationConnectPage({ params }: PageProps<IntegrationConnectParams>) {
   const router = useRouter();
   const [connectionStep, setConnectionStep] = useState(1);
   const [apiKey, setApiKey] = useState("");
@@ -186,7 +191,7 @@ export default function IntegrationConnectPage({ params }: { params: { id: strin
                     <Lock className="h-3 w-3 mr-1" /> Your data is secure
                   </p>
                   <p>
-                    Your API key is securely transmitted and stored. We use it only to sync data from 
+                    Your API key is securely transmitted and stored. We use it only to sync data from {' '}
                     {integration.name} to our platform.
                   </p>
                 </div>
