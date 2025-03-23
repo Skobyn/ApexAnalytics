@@ -22,13 +22,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-type IntegrationPageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default function IntegrationPage({ params }: IntegrationPageProps) {
+export default function IntegrationPage({ params }: { params: { id: string } }) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
