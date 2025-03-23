@@ -336,6 +336,7 @@ export default function CampaignDashboard() {
           chartData={mockData.googleAnalytics.engagedSessionsChart}
           chartColor="#3b82f6"
           dateLabels={mockData.googleAnalytics.sessionsDates}
+          subtitle="Active user interactions"
         />
 
         <div className="grid grid-cols-3 gap-4 mt-4">
