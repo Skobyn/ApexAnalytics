@@ -345,6 +345,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-analytics" />}
             chartData={mockData.googleAnalytics.sessionsChart.map(v => v/100)}
             chartColor="#3b82f6"
+            subtitle="Total sessions"
           />
 
           <SmallMetricWidget
@@ -352,6 +353,7 @@ export default function CampaignDashboard() {
             value="0"
             icon={<PlatformIcon platform="google-analytics" />}
             showNoData={true}
+            subtitle="Key user actions"
           />
 
           <SmallMetricWidget
@@ -360,6 +362,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-analytics" />}
             chartData={mockData.googleAnalytics.eventCountChart.map(v => v/1000)}
             chartColor="#3b82f6"
+            subtitle="Total tracked events"
           />
         </div>
       </div>
@@ -396,6 +399,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-business" />}
             chartData={mockData.googleBusinessProfile.callClicksChart}
             chartColor="#3b82f6"
+            subtitle="Clicks on call button"
           />
 
           <SmallMetricWidget
@@ -404,6 +408,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-business" />}
             chartData={mockData.googleBusinessProfile.websiteClicksChart}
             chartColor="#3b82f6"
+            subtitle="Clicks to website"
           />
 
           <SmallMetricWidget
@@ -412,6 +417,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-business" />}
             chartData={mockData.googleBusinessProfile.reviewsChart}
             chartColor="#3b82f6"
+            subtitle="Business reviews"
           />
 
           <SmallMetricWidget
@@ -419,6 +425,7 @@ export default function CampaignDashboard() {
             value="0"
             icon={<PlatformIcon platform="google-business" />}
             showNoData={true}
+            subtitle="Direct phone calls"
           />
 
           <SmallMetricWidget
@@ -426,6 +433,7 @@ export default function CampaignDashboard() {
             value="$0.00"
             icon={<PlatformIcon platform="google-business" />}
             showNoData={true}
+            subtitle="Average lead cost"
           />
 
           <SmallMetricWidget
@@ -433,6 +441,7 @@ export default function CampaignDashboard() {
             value="$0.00"
             icon={<PlatformIcon platform="google-business" />}
             showNoData={true}
+            subtitle="Total campaign cost"
           />
         </div>
       </div>
@@ -451,6 +460,7 @@ export default function CampaignDashboard() {
           chartData={mockData.googleSearchConsole.clicksChart}
           chartColor="#3b82f6"
           dateLabels={mockData.googleAnalytics.sessionsDates}
+          subtitle="Total search clicks"
         />
 
         <div className="grid grid-cols-3 gap-4 mt-4">
@@ -517,6 +527,7 @@ export default function CampaignDashboard() {
             value=""
             icon={<PlatformIcon platform="klaviyo" />}
             showNoData={true}
+            subtitle="Email open rate"
           />
 
           <SmallMetricWidget
@@ -524,6 +535,7 @@ export default function CampaignDashboard() {
             value=""
             icon={<PlatformIcon platform="klaviyo" />}
             showNoData={true}
+            subtitle="Email bounce rate"
           />
 
           <SmallMetricWidget
@@ -531,6 +543,7 @@ export default function CampaignDashboard() {
             value="0"
             icon={<PlatformIcon platform="klaviyo" />}
             showNoData={true}
+            subtitle="Total campaigns"
           />
         </div>
       </div>
