@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getIntegrationById, categories, IntegrationCategory } from "@/lib/integrations";
 import { notFound } from "next/navigation";
+import { PageProps } from "@/types/next";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const integration = getIntegrationById(params.id);
@@ -22,11 +23,11 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-type Props = {
-  params: { id: string };
-}
+type IntegrationPageParams = {
+  id: string;
+};
 
-export default function IntegrationPage({ params }: Props) {
+export default function IntegrationPage({ params }: PageProps<IntegrationPageParams>) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
