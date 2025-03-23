@@ -54,7 +54,7 @@ export default function IntegrationsDashboard() {
         </div>
         <div className="mt-4 sm:mt-0">
           <Button className="bg-blue-600 hover:bg-blue-700 text-white flex items-center" asChild>
-            <Link href="/integrations">
+            <Link href="/integrations/connect">
               <PlusCircle className="mr-1 h-4 w-4" />
               Add New Integration
             </Link>
@@ -221,8 +221,17 @@ export default function IntegrationsDashboard() {
                     ? "bg-white text-blue-600 border border-blue-600 hover:bg-blue-50"
                     : "bg-blue-600 text-white hover:bg-blue-700"
                 }`}
+                asChild
               >
-                {integration.status === "connected" ? "Manage" : "Connect"}
+                {integration.status === "connected" ? (
+                  <Link href={`/dashboard/integrations/settings/${integration.id}`}>
+                    Manage
+                  </Link>
+                ) : (
+                  <Link href={`/integrations/connect/${integration.id}`}>
+                    Connect
+                  </Link>
+                )}
               </Button>
             </div>
           </Card>
