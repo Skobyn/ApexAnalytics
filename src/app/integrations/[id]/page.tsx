@@ -7,7 +7,11 @@ import { getIntegrationById, categories, IntegrationCategory } from "@/lib/integ
 import { notFound } from "next/navigation";
 import { PageProps } from "@/types/next";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+type IntegrationParams = {
+  id: string;
+};
+
+export async function generateMetadata({ params }: PageProps<IntegrationParams>) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
@@ -22,10 +26,6 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     description: `Connect your ${integration.name} account to AgencyAnalytics for seamless reporting and data visualization.`,
   };
 }
-
-type IntegrationParams = {
-  id: string;
-};
 
 export default function IntegrationPage({ params }: PageProps<IntegrationParams>) {
   const integration = getIntegrationById(params.id);
