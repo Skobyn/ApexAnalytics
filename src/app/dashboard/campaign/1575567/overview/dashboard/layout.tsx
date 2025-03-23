@@ -111,7 +111,7 @@ export default function DashboardCampaignLayout({
             <button className="p-1 text-gray-500 hover:text-gray-700">
               <Share2 className="h-4 w-4" />
             </button>
-            <Button size="sm" variant="primary" className="bg-blue-600 hover:bg-blue-700 text-white text-xs">
+            <Button size="sm" variant="default" className="bg-blue-600 hover:bg-blue-700 text-white text-xs">
               Edit Dashboard Sections
             </Button>
           </div>
