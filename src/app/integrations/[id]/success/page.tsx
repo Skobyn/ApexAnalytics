@@ -11,7 +11,7 @@ import { getIntegrationById } from "@/lib/integrations";
 import { notFound } from "next/navigation";
 import { CheckCircle } from "lucide-react";
 
-export default function IntegrationSuccessPage({ params }: { params: { id: string } }) {
+export default function IntegrationSuccessPage({ params }) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {

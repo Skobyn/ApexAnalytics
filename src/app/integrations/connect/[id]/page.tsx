@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { getIntegrationById } from "@/lib/integrations";
 import { notFound } from "next/navigation";
 
-export default function ConnectIntegrationPage({ params }: { params: { id: string } }) {
+export default function ConnectIntegrationPage({ params }) {
   const router = useRouter();
   const integration = getIntegrationById(params.id);
   const [step, setStep] = useState(1);
@@ -48,7 +48,7 @@ export default function ConnectIntegrationPage({ params }: { params: { id: strin
     oauth: ["google-analytics-4", "google-ads", "google-search-console", "google-business-profile"].includes(integration.id),
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -68,7 +68,7 @@ export default function ConnectIntegrationPage({ params }: { params: { id: strin
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");

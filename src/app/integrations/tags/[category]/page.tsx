@@ -6,7 +6,7 @@ import Link from "next/link";
 import { getIntegrationsByCategory, categories, IntegrationCategory } from "@/lib/integrations";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { category: string } }) {
+export async function generateMetadata({ params }) {
   const category = categories.find(cat => cat.id === params.category);
 
   if (!category) {
@@ -22,16 +22,14 @@ export async function generateMetadata({ params }: { params: { category: string 
   };
 }
 
-export default function CategoryPage({ params }: { params: { category: string } }) {
-  // Validate that the category exists
-  const category = categories.find(cat => cat.id === params.category);
+export default function CategoryPage({ params }) {
+  const categoryId = params.category;
+  const integrations = getIntegrationsByCategory(categoryId);
+  const category = categories.find(cat => cat.id === categoryId);
 
   if (!category) {
     notFound();
   }
-
-  // Get integrations for this category
-  const integrations = getIntegrationsByCategory(params.category as IntegrationCategory);
 
   return (
     <main>
