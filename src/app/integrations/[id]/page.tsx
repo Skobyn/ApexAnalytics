@@ -22,13 +22,11 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-type Props = {
+export default function IntegrationPage({ 
+  params,
+}: {
   params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export default function IntegrationPage(props: Props) {
-  const { params } = props;
+}) {
   const integration = getIntegrationById(params.id);
 
   if (!integration) {
@@ -43,7 +41,7 @@ export default function IntegrationPage(props: Props) {
   return (
     <main>
       <Header />
-
+      
       <section className="py-12 bg-gradient-to-b from-[#f7f9fa] to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-6">
@@ -94,7 +92,7 @@ export default function IntegrationPage(props: Props) {
           </div>
         </div>
       </section>
-
+      
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
