@@ -10,7 +10,7 @@ import { CheckCircle, ChevronRight, ArrowRight, Settings, BarChart2 } from "luci
 import { getIntegrationById } from "@/lib/integrations";
 import { PageProps } from "@/types/next";
 
-export default function IntegrationSuccessPage() {
+export default function IntegrationSuccessPage(props: PageProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const integrationId = searchParams.get('id');
