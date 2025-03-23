@@ -110,7 +110,8 @@ const SmallMetricWidget = ({
   icon,
   chartData = [],
   chartColor = "#3b82f6",
-  showNoData = false
+  showNoData = false,
+  subtitle = ""
 }) => {
   return (
     <Card className="overflow-hidden bg-white border border-gray-200 rounded-md">
@@ -122,6 +123,7 @@ const SmallMetricWidget = ({
 
         <div className="mb-2">
           <div className="text-2xl font-bold text-gray-900">{value}</div>
+          {subtitle && <div className="text-xs text-gray-500">{subtitle}</div>}
         </div>
 
         {showNoData ? (
@@ -458,6 +460,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-search" />}
             chartData={mockData.googleSearchConsole.impressionsChart.map(v => v/1000)}
             chartColor="#3b82f6"
+            subtitle="Total impressions"
           />
 
           <SmallMetricWidget
@@ -466,6 +469,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-search" />}
             chartData={mockData.googleSearchConsole.ctrChart}
             chartColor="#3b82f6"
+            subtitle="Click-through rate"
           />
 
           <SmallMetricWidget
@@ -474,6 +478,7 @@ export default function CampaignDashboard() {
             icon={<PlatformIcon platform="google-search" />}
             chartData={mockData.googleSearchConsole.avgPositionChart}
             chartColor="#3b82f6"
+            subtitle="Average position"
           />
         </div>
       </div>
